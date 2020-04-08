@@ -22,7 +22,9 @@ def gera_numero():
 
 def inicia():
     num = str(gera_numero())
-    with open('numero.txt', 'w') as f:
+    dir = os.getcwd()
+    file = os.path.join(dir, 'numero.txt')
+    with open(file, 'w') as f:
         f.write(num)
         f.close()
 
