@@ -4,7 +4,6 @@
 from pymongo import MongoClient
 
 class DB:
-
     def __init__(self):
         self.cliente = ''
         self.banco = ''
@@ -21,7 +20,6 @@ class DB:
     def find_mongo(self, collection, name):
         data = collection.find({'Name': name})
         for a in data:
-            print(a)
             return a
 
     def check(self, collection, name):
@@ -35,8 +33,9 @@ class DB:
     def remove(self, collection, usr):
         collection.remove({'Name': usr})
 
-    def update(self, collection, name, target_number, attempt, result):
-        collection.update({'Name': name}, {'Name': name, 'Target': target_number, 'Count': attempt, 'Result': result})
+    def update(self, collection, name, target_number, attempt, result, attempt_list):
+        collection.update({'Name': name}, {'Name': name, 'Target': target_number, 'Count': attempt,
+                                           'Result': result, 'past_attempt': attempt_list})
 
 if __name__ == "__main__":
     conn = DB()
