@@ -1,4 +1,4 @@
-# Masteming_GAME
+# Mastemind_GAME
 
 This is the repository to play the Mastermind game. The game consists in a pattern of 4 random digitis and the player (codebreaker) needs to guess the pattern, in both digits and order, within 10 moves. Each move the codebreaker inputs his guess and gets the feedback, returning '1' for each correct digit in the correct location and '0' for each correct digit in the wrong location.
 
